@@ -1,0 +1,9 @@
+Kundengruppe,Artikelgruppe,Region,Umsatz
+Fachhandel ,Tourenräder,West,niedrig
+Discounter,Cityräder,West,hoch 
+Fachhandel ,Mountainbikes,Nord,mittel
+Fachhandel ,Tourenräder,Nord,niedrig
+Fachhandel ,Tourenräder,Süd,hoch 
+Kaufhaus,Mountainbikes,Nord,mittel 
+Discounter,Mountainbikes,West,mittel 
+Discounter,Cityräder,West,hoch 

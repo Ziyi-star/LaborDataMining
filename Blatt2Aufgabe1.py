@@ -4,29 +4,29 @@ import matplotlib.pyplot as plt
 def f(x, a, b, c, d):
     return a * np.sin(b * (x + c)) + d
 
+
 def g(x, a, b, c, d):
     return a * np.sin(b * (x + c)) + d
 
-def main():
 
-    #Funktion als 1.Bild
+def main():
+    # Funktion als 1.Bild
     x = np.linspace(0, 4 * np.pi, 10000)
     y_wahrheit = f(x, 1, 2, 0, 0)
-    #low Varance and low Bias
+    # low Varance and low Bias
     y_pred_lvlb = g(x, 0.5, 2, 0, 0)
-    #low Varance and high Bias
-    y_pred_lvhb = g(x,1,2,0,1)
-    #High Varance and low Bias
-    y_pred_hvlb = g(x,1,10,0,0)
-    #High Varance and high Bias
-    y_pred_hvhb = g(x,0.5,5,np.pi/2,2)
+    # low Varance and high Bias
+    y_pred_lvhb = g(x, 1, 2, 0, 1)
+    # High Varance and low Bias
+    y_pred_hvlb = g(x, 1, 10, 0, 0)
+    # High Varance and high Bias
+    y_pred_hvhb = g(x, 0.5, 5, np.pi / 2, 2)
 
-    #erwartungswert
+    # erwartungswert
     expected_g_lvlb = np.mean(y_pred_lvlb)
     expected_g_lvhb = np.mean(y_pred_lvhb)
     expected_g_hvlb = np.mean(y_pred_hvlb)
     expected_g_hvhb = np.mean(y_pred_hvhb)
-
 
     # bias und Varianz als 2. Bild
     bias_lvlb = np.mean((expected_g_lvlb - y_wahrheit) ** 2)
@@ -55,10 +55,11 @@ def main():
 
     # 2. Bild
     ax2.bar(['Low Variance and Low Bias', 'Low Variance and High Bias', 'High Variance and Low Bias',
-            'High Variance and High Bias'], [variance_lvlb, variance_lvhb, variance_hvlb, variance_hvhb],label='Variance')
+             'High Variance and High Bias'], [variance_lvlb, variance_lvhb, variance_hvlb, variance_hvhb],
+            label='Variance')
     ax2.bar(['Low Variance and Low Bias', 'Low Variance and High Bias', 'High Variance and Low Bias',
-            'High Variance and High Bias'], [bias_lvlb, bias_lvhb, bias_hvlb, bias_hvhb],
-           bottom=[variance_lvlb, variance_lvhb, variance_hvlb, variance_hvhb], label='Bias')
+             'High Variance and High Bias'], [bias_lvlb, bias_lvhb, bias_hvlb, bias_hvhb],
+            bottom=[variance_lvlb, variance_lvhb, variance_hvlb, variance_hvhb], label='Bias')
     ax2.set_xlabel('Models')
     ax2.set_ylabel('Error')
     ax2.set_title('Bias-Variance Decomposition')
@@ -66,6 +67,7 @@ def main():
 
     # Zeigt die plt-Figur
     plt.show()
+
 
 if __name__ == '__main__':
     main()
